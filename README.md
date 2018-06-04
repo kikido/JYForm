@@ -1,11 +1,11 @@
-###JYForm
+### JYForm
 
 JYForm是一个iOS开源库，能够快速，灵活的搭建，修改表单。
 		
-###目录
+### 目录
 [toc]
 	
-###如何创建表格
+### 如何创建表格
 
 `JYForm`在创建时隐藏了复杂的实现，却可以依旧拥有强大，灵活的修改表单的能力。
 
@@ -85,7 +85,7 @@ JYForm是一个iOS开源库，能够快速，灵活的搭建，修改表单。
 ![](Demo/blogimage/gif01.gif)
 
 
-####使用AutoLayout添加
+#### 使用AutoLayout添加
 
 在上面那个例子中，在创建`JYForm`对象的时候我是这样写的:
  ```
@@ -101,7 +101,7 @@ JYForm *form1 = [[JYForm alloc] initWithFormDescriptor:formDescriptor];
     //自动布局代码。。。
 ```
 
-####使用CGRect添加
+#### 使用CGRect添加
 
 你还可以使用CGRect对JYForm进行布局
 
@@ -116,9 +116,9 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 - 键盘弹出时的动画可能会有点僵硬
 
 
-###行的种类
+### 行的种类
 
-####文本输入行
+#### 文本输入行
 
 ##### JYFormRowDescriptorTypeText
 
@@ -128,7 +128,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 
 ![JYFormRowDescriptorTypeText](Demo/blogimage/keyboardtext.png)
 
-#####JYFormRowDescriptorTypeName
+##### JYFormRowDescriptorTypeName
 
 `NSString *const JYFormRowDescriptorTypeName = @"name";`
 
@@ -137,7 +137,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 ![JYFormRowDescriptorTypeName](Demo/blogimage/keyboardname.png)
 
 
-#####JYFormRowDescriptorTypeURL
+##### JYFormRowDescriptorTypeURL
 
 `NSString *const JYFormRowDescriptorTypeURL = @"url";`
 
@@ -146,7 +146,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 ![JYFormRowDescriptorTypeURL](Demo/blogimage/keyboardurl.png)
 
 
-#####JYFormRowDescriptorTypeEmail
+##### JYFormRowDescriptorTypeEmail
 
 `NSString *const JYFormRowDescriptorTypeEmail = @"email";`
 
@@ -154,7 +154,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 
 ![JYFormRowDescriptorTypeEmail](Demo/blogimage/keyboardemail.png)
 
-#####JYFormRowDescriptorTypePassword
+##### JYFormRowDescriptorTypePassword
 
 `NSString *const JYFormRowDescriptorTypePassword = @"password";`
 
@@ -162,7 +162,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 
 ![JYFormRowDescriptorTypePassword](Demo/blogimage/keyboardpassword.png)
 
-#####JYFormRowDescriptorTypeNumber
+##### JYFormRowDescriptorTypeNumber
 
 `NSString *const JYFormRowDescriptorTypeNumber = @"number";`
 
@@ -171,7 +171,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 ![JYFormRowDescriptorTypeNumber](Demo/blogimage/keyboardnumber.png)
 
 
-#####JYFormRowDescriptorTypeInteger
+##### JYFormRowDescriptorTypeInteger
 
 `NSString *const JYFormRowDescriptorTypeInteger = @"integer";`
 
@@ -181,7 +181,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 
 
 
-#####JYFormRowDescriptorTypeDecimal
+##### JYFormRowDescriptorTypeDecimal
 
 `NSString *const JYFormRowDescriptorTypeDecimal = @"decimal";`
 
@@ -192,7 +192,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 
 
 
-#####JYFormRowDescriptorTypePhone
+##### JYFormRowDescriptorTypePhone
 
 `NSString *const JYFormRowDescriptorTypePhone = @"phone";`
 
@@ -203,7 +203,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 
 
 
-#####JYFormRowDescriptorTypeTextView
+##### JYFormRowDescriptorTypeTextView
 
 `NSString *const JYFormRowDescriptorTypeTextView = @"textView";`
 
@@ -213,7 +213,7 @@ JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor frame:CGRec
 
 
 
-####选择行
+#### 选择行
 
 选择行允许我们从某个选择列表中选择一行或者几行
 
@@ -231,40 +231,40 @@ JYForm遵循下列的先后顺序来显示您的选择项文本:
 - 如果`JYFormRowDescriptor`的`valueTransformer`属性不为空，则会显示`valueTransformer`转换`JYFormOptionsObject`的`formDisplaytext`之后的文本。
 - 直接显示`JYFormOptionsObject`的`formDisplaytext`文本
 
-####日期，时间行
+#### 日期，时间行
 
-#####JYFormRowDescriptorTypeDate
+##### JYFormRowDescriptorTypeDate
 
 `NSString *const JYFormRowDescriptorTypeDate = @"date";`
 
 ![JYFormRowDescriptorTypeDate](Demo/blogimage/date.png)
 
-#####JYFormRowDescriptorTypeTime
+##### JYFormRowDescriptorTypeTime
 
 `NSString *const JYFormRowDescriptorTypeTime = @"time";`
 
 ![JYFormRowDescriptorTypeTime](Demo/blogimage/time.png)
 
-#####JYFormRowDescriptorTypeDateTime
+##### JYFormRowDescriptorTypeDateTime
 
 `NSString *const JYFormRowDescriptorTypeDateTime = @"datetime";`
 
 ![JYFormRowDescriptorTypeDateTime](Demo/blogimage/datetime.png)
 
-#####JYFormRowDescriptorTypeCountDownTimer
+##### JYFormRowDescriptorTypeCountDownTimer
 
 `NSString *const JYFormRowDescriptorTypeCountDownTimer = @"countDownTimer";`
 
 ![JYFormRowDescriptorTypeCountDownTimer](Demo/blogimage/countdown.png)
 
-#####JYFormRowDescriptorTypeDateInline
+##### JYFormRowDescriptorTypeDateInline
 
 `NSString *const JYFormRowDescriptorTypeDateInline = @"dateInline";`
 
 ![JYFormRowDescriptorTypeDateInline](Demo/blogimage/dateinline.png)
 
 
-####布尔行
+#### 布尔行
 
 `NSString *const JYFormRowDescriptorTypeSwitch = @"switch";`
 
@@ -276,9 +276,9 @@ JYForm遵循下列的先后顺序来显示您的选择项文本:
 ![JYFormRowDescriptorTypeCheck](Demo/blogimage/check.png)
 
 
-####其它行
+#### 其它行
 
-#####Stepper
+##### Stepper
 
 `NSString *const JYFormRowDescriptorTypeStepCounter = @"stepCounter";`
 
@@ -294,7 +294,7 @@ JYForm遵循下列的先后顺序来显示您的选择项文本:
 ![JYFormRowDescriptorTypeStepCounter](Demo/blogimage/step.png)
 
 
-#####Slider
+##### Slider
 
 `NSString *const JYFormRowDescriptorTypeSlider = @"slider";`
 
@@ -309,7 +309,7 @@ JYForm遵循下列的先后顺序来显示您的选择项文本:
 
 ![JYFormRowDescriptorTypeSlider](Demo/blogimage/slider.png)
 
-#####Info
+##### Info
 
 `NSString *const JYFormRowDescriptorTypeInfo = @"info";`
 
@@ -318,7 +318,7 @@ JYForm遵循下列的先后顺序来显示您的选择项文本:
 ![JYFormRowDescriptorTypeInfo](Demo/blogimage/info.png)
 
 
-#####Button
+##### Button
 
 NSString *const JYFormRowDescriptorTypeButton = @"button";
 
@@ -329,9 +329,9 @@ NSString *const JYFormRowDescriptorTypeButton = @"button";
 - 如果`JYFormRowDescriptor`的`action`的`viewControllerClass`不为空，则跳转到该视图控制器
 
 
-###Section
+### Section
 
-####行的删除
+#### 行的删除
 
 如果在JYForm中需要删除行，那你需要这样子初始化`JYFormSectionDescriptor`对象
 
@@ -351,9 +351,9 @@ section = [JYFormSectionDescriptor formSectionWithTitle:@"Delete" sectionOptions
 ![](Demo/blogimage/gif03.gif)
 
 
-###获取表单值
+### 获取表单值
 
-####formValues
+#### formValues
 
 你可以通过获取到表单上每行的值通过调用`JYForm`的`- (NSDictionary *)formValues;`方法或者`JYFormDescriptor`的`- (NSDictionary *)formValues;`方法。
 
@@ -362,7 +362,7 @@ section = [JYFormSectionDescriptor formSectionWithTitle:@"Delete" sectionOptions
 - 遍历每一行，如果这行的`tag`的不为空，则以改行的`tag`为key，该行的value(value为空时传[NSNull null])为value添加到字典中。
 - 需要注意如果该行是选中选择行类型的话，那么该行的value为`JYFormOptionsObject`对象，或者`NSArray<JYFormOptionsObject *>`类型
 
-####httpParameters
+#### httpParameters
 
 当我们创建好表单之后，常常需要将表单各行的值通过请求发送给后台，在这个时候你可以试着调用`JYForm`的`- (NSDictionary *)httpParameters;`方法或者`JYFormDescriptor`的`- (NSDictionary *)httpParameters:(JYForm *)form`方法来获取`httpParameters`。
 
@@ -372,7 +372,7 @@ section = [JYFormSectionDescriptor formSectionWithTitle:@"Delete" sectionOptions
 - 如果改行的值为`JYFormOptionsObject`对象，则添加的是`JYFormOptionsObject`的`formValue`属性;如果该行的值为如果改行的值为`NSArray<JYFormOptionsObject *>`类型 ，则添加到字典的值为`NSArray<JYFormOptionsObject。formValue>`;如果该行的值为`NSString`，`NSNumber`，`NSDate`类型，则返回该值本身
 
 
-###如何自定义行呢
+### 如何自定义行呢
 
 如果你想要创建自己的`UITableViewCell`的话，那么一定要继承`JYFormBaseCell`。`JYFormBaseCell`必须要实现`JYFormDescriptorCell`代理。
 
@@ -462,7 +462,7 @@ section = [JYFormSectionDescriptor formSectionWithTitle:@"Delete" sectionOptions
 添加完成之后，你可以直接在JYForm中直接添加这种类型的行`JYFormRowDescriptor *row = [JYFormRowDescriptor formRowDescriptorWithTag:@"test" rowType:@"Test"]`
 
 
-###如何在运行中改变表格
+### 如何在运行中改变表格
 
 对`JYFormDescriptor`做的修改都会映射在JYForm中的'tableView'上，例如你对`JYFormSectionDescriptor`和`JYFormRowDescriptor`进行添加和删除，会直接表现在section以及row的添加或者删除。
 
@@ -472,16 +472,16 @@ section = [JYFormSectionDescriptor formSectionWithTitle:@"Delete" sectionOptions
 
 
 
-####隐藏row或者section
+#### 隐藏row或者section
 
 `JYFormDescriptor`和`JYFormSectionDescriptor`均有`hidden`属性，你可以将其设置为YES，来达到隐藏的目的。
 
-####禁用
+#### 禁用
 
 `JYFormDescriptor`和`JYFormSectionDescriptor`均有`disable`属性，你可以将其设置为YES，来达到隐藏的目的。禁用时，row会处于不可编辑状态，只能显示信息，不能响应事件。
 
 
-###让row或者section是否可见依赖于其他row的值
+### 让row或者section是否可见依赖于其他row的值
 
 ![](Demo/blogimage/gif04.gif)
 
@@ -546,7 +546,7 @@ JYForm允许你定义两个row的依赖关系，当一行的值发生改变时�
 
 
 
-###验证
+### 验证
 
 JYForm提供验证功能，验证该行的值是否符合我们设定的条件。
 
@@ -578,7 +578,7 @@ JYForm提供验证功能，验证该行的值是否符合我们设定的条件�
 你可以通过`JYform`的`- (NSArray *)formValidationErrors;`方法所有验证不通过的行的错误信息。
 
 
-###对Rows进行额外的配置
+### 对Rows进行额外的配置
 
 `JYFormRowDescriptor`允许我们对`UITableViewCell`进行一般的配置，例如`rowType`，`value`，改行是否`required`，`hidden`，`disabled`等
 
@@ -607,15 +607,15 @@ row = [JYFormRowDescriptor formRowDescriptorWithTag:@"name" rowType:JYFormRowDes
 [section addFormRow:row];
 ```
 
-###更多例子请看Demo！
+### 更多例子请看Demo！
 
-###FAQ
+### FAQ
 
 #### 如何给section自定义 header/footer
 
 你也可以通过设置`JYFormSectionDescriptor`的`headerHieght`和`headerView`或者`footerHieght`和`footerView`属性来自定义header/footer
 
-####如何给row设置value
+#### 如何给row设置value
 
 你可以设置row的属性`value`
 
@@ -625,15 +625,15 @@ row = [JYFormRowDescriptor formRowDescriptorWithTag:@"name" rowType:JYFormRowDes
 你可以发现这个属性的类型是`id`，所以你设置value时需要注意值的类型。例如，`JYFormRowDescriptorTypeDate`的类型为`NSDate`，`JYFormRowDescriptorTypeText`的类型为`NSString`。当设置完成之后，如果你需要刷新row的UI，你可以调用`JYForm`的方法`- (void)reloadFormRow:(JYFormRowDescriptor *)formRow;
 `
 
-####如何给选择行添加选项
+#### 如何给选择行添加选项
 
 JYForm有若干的选择行类型，大部分的类型都必须要先知道选项(如果设置了`action`的`viewControllerClass`属性，JYFormRowDescriptorTypeSelectorPush，JYFormRowDescriptorTypeMultipleSelector不需要)。你可以通过设置`JYFormRowDescriptor`的`selectorOptions`属性来设置选项。
 
-####如何拿到表单的值
+#### 如何拿到表单的值
 
 具体可以再看一眼上面的内容:获取表单值部分
 
-####如何改变UITextField的长度占比
+#### 如何改变UITextField的长度占比
 
 你可以通过下面的代码这样设置
 
@@ -643,14 +643,14 @@ JYForm有若干的选择行类型，大部分的类型都必须要先知道选�
 
 ```
 
-####设置UITextField可输入的最大字符数
+#### 设置UITextField可输入的最大字符数
 
 ```
 [row.cellConfigAtConfigure setObject:@(20) forKey:@"textViewMaxNumberOfCharacters"];
 
 ```
 
-####如何改变UITextField的returnKeyType
+#### 如何改变UITextField的returnKeyType
 
 ```
 [row.cellConfigAtConfigure setObject:@(UIReturnKeyGo) forKey:@"nextReturnKeyType"];
@@ -658,7 +658,7 @@ JYForm有若干的选择行类型，大部分的类型都必须要先知道选�
 ```
 
 
-####如何改变UITableViewCell的字体
+#### 如何改变UITableViewCell的字体
 
 可以在JYFormAppearanceConfig.h文件中，设置下面两个属性：
 
@@ -669,7 +669,7 @@ JYForm有若干的选择行类型，大部分的类型都必须要先知道选�
 #define kJYForm_Cell_DetailTextFont [UIFont preferredFontForTextStyle:UIFontTextStyleBody]
 ```
 
-####如何改变UITableViewCell的字体颜色
+#### 如何改变UITableViewCell的字体颜色
 
 可以在JYFormAppearanceConfig.h文件中，设置下面几个属性：
 
@@ -686,7 +686,7 @@ JYForm有若干的选择行类型，大部分的类型都必须要先知道选�
 ```
 
 
-####如何给日期行设置最大，最小日期
+#### 如何给日期行设置最大，最小日期
 
 你可以通过下面的代码这样设置
 
@@ -695,7 +695,7 @@ JYForm有若干的选择行类型，大部分的类型都必须要先知道选�
 [row.cellConfigAtConfigure setObject:[NSDate dateWithTimeIntervalSinceNow:(60*60*24*3)] forKey:@"maximumDate"];
 ```
 
-####如何使整个表单处于禁用状态
+#### 如何使整个表单处于禁用状态
 
 ```
 form。disable = YES;
@@ -703,7 +703,7 @@ form。disable = YES;
 ```
 
 
-####如何改变cell的高度
+#### 如何改变cell的高度
 
 cell的高度优先级按照以下规则
 
@@ -711,7 +711,7 @@ cell的高度优先级按照以下规则
 - 实现`JYFormDescriptorCell`代理的方法`+ (CGFloat)formDescriptorCellHeightForRowDescriptor:(JYFormRowDescriptor *)rowDescriptor;`
 - 前两部都没有的吗，则返回默认高度`static const CGFloat kCellestimatedRowHeight = 55。0;`
 
-###要求
+### 要求
 
 - ARC
 - iOS 8.0+
