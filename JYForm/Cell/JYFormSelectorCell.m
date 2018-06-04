@@ -265,7 +265,7 @@
     return nil;
 }
 
--(NSInteger)selectedIndex
+- (NSInteger)selectedIndex
 {
     if (self.rowDescriptor.value){
         for (id option in self.rowDescriptor.selectorOptions){

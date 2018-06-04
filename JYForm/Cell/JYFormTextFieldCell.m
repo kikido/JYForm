@@ -59,6 +59,7 @@
     
     if (!self.textLabel) {
         _textLabel = [UILabel autolayoutView];
+//        _textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     }
     if (!self.textField) {
         _textField = [UITextField autolayoutView];

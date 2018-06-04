@@ -38,6 +38,11 @@
         self.headerTitle = nil;
         self.footerTitle = nil;
         self.hidden = NO;
+        
+        self.headerView = nil;
+        self.headerHieght = 30.;
+        self.footerView = nil;
+        self.footerHieght = 30.;
 
         [self addObserver:self forKeyPath:@"formRows" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     }

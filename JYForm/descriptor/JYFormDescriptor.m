@@ -24,8 +24,8 @@ NSString *const JYValidationStatusErrorKey = @"JYValidationStatusErrorKey";
 @end
 
 @interface JYFormRowDescriptor (JYFormDescriptor)
--(BOOL)evaluateIsDisabled;
--(BOOL)evaluateIsHidden;
+- (BOOL)evaluateIsDisabled;
+- (BOOL)evaluateIsHidden;
 @end
 
 @interface JYFormDescriptor()
@@ -56,6 +56,7 @@ NSString *const JYValidationStatusErrorKey = @"JYValidationStatusErrorKey";
         _addAsteriskToRequiredRowsTitle = NO;
         _disabled = NO;
         _endEditingTableViewOnScroll = YES;
+        _formFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         
         [self addObserver:self forKeyPath:@"formSections" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)  context:nil];
     }

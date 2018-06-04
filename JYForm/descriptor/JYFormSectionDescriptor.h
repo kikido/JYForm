@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /**
  A bitwise enum parameter that used to choose the multivalued section type
@@ -42,6 +43,14 @@ typedef NS_OPTIONS(NSUInteger, JYFormSectionOptions) {
 ///|< Whether the section is hidden
 @property (nonatomic, assign) BOOL hidden;
 
+@property (nullable, nonatomic, strong) UIView *headerView;
+///|< default is 30.0f
+@property (nonatomic, assign) CGFloat headerHieght;
+
+
+@property (nullable, nonatomic, strong) UIView *footerView;
+///|< default is 30.0f
+@property (nonatomic, assign) CGFloat footerHieght;
 
 /**
  Initialize a JYFormSectionDescriptor instance by default

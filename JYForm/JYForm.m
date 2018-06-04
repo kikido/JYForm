@@ -302,6 +302,13 @@ static const CGFloat kCellestimatedRowHeight = 55.0;
     [cell update];
 }
 
+- (void)formRowDescriptorValueHasChanged:(JYFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue
+{
+    if (self.delegate) {
+        [self.delegate formRowDescriptorValueHasChanged:self formRow:formRow oldValue:oldValue newValue:newValue];
+    }
+}
+
 #pragma mark - JYFormViewDelegate
 
 - (NSDictionary *)formValues
@@ -664,6 +671,32 @@ static const CGFloat kCellestimatedRowHeight = 55.0;
     return YES;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    JYFormSectionDescriptor *sectionDescriptor = [self.formDescriptor formSectionAtIndex:section];
+    return sectionDescriptor.headerHieght;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    JYFormSectionDescriptor *sectionDescriptor = [self.formDescriptor formSectionAtIndex:section];
+    return sectionDescriptor.footerHieght;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
+{
+    JYFormSectionDescriptor *sectionDescriptor = [self.formDescriptor formSectionAtIndex:section];
+    return sectionDescriptor.headerView;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    JYFormSectionDescriptor *sectionDescriptor = [self.formDescriptor formSectionAtIndex:section];
+    return sectionDescriptor.footerView;
+}
+
+
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField
@@ -718,7 +751,7 @@ static const CGFloat kCellestimatedRowHeight = 55.0;
     
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField
+- (void)textFieldDidEndEditing:(UITextField *)textField
 {
     
 }
@@ -730,11 +763,11 @@ static const CGFloat kCellestimatedRowHeight = 55.0;
     return YES;
 }
 
--(void)textViewDidBeginEditing:(UITextView *)textView
+- (void)textViewDidBeginEditing:(UITextView *)textView
 {
 }
 
--(void)textViewDidEndEditing:(UITextView *)textView
+- (void)textViewDidEndEditing:(UITextView *)textView
 {
 }
 

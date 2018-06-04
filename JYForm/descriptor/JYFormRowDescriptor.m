@@ -191,7 +191,7 @@ CGFloat const JYFormUnspecifiedCellHeight = -3.0;
 
 #pragma mark - KVO
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (!self.sectionDescriptor) return;
     
@@ -201,8 +201,10 @@ CGFloat const JYFormUnspecifiedCellHeight = -3.0;
             id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
             
             if ([keyPath isEqualToString:@"value"]) {
+                __weak typeof(self) weakSelf = self;
+
+                [self.sectionDescriptor.formDescriptor.delegate formRowDescriptorValueHasChanged:weakSelf oldValue:oldValue newValue:newValue];
                 if (self.onChangeBlock) {
-                    __weak typeof(self) weakSelf = self;
                     self.onChangeBlock(oldValue, newValue, weakSelf);
                 }
             }
@@ -243,7 +245,7 @@ CGFloat const JYFormUnspecifiedCellHeight = -3.0;
 #pragma mark - Hidden
 
 
--(BOOL)evaluateIsHidden
+- (BOOL)evaluateIsHidden
 {
     if (!_hidden) {
         [self.sectionDescriptor showFormRow:self];

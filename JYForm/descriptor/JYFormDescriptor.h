@@ -48,6 +48,8 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 ///|< The delegate must conform to the JYFormDescriptorDelegate protocol
 @property (nonatomic, weak) id<JYFormDescriptorDelegate> delegate;
 
+@property (nonatomic, strong) UIFont *formFont;
+
 /**
  Initialize a JYFormDescriptor instance
 
@@ -233,14 +235,14 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  The nextRow after the currentrow on the form, maybe nil
 
  */
--(JYFormRowDescriptor *)nextRowDescriptorForRow:(JYFormRowDescriptor *)currentRow;
+- (JYFormRowDescriptor *)nextRowDescriptorForRow:(JYFormRowDescriptor *)currentRow;
 
 
 /**
  The previousRow before the currentrow on the form, maybe nil
 
  */
--(JYFormRowDescriptor *)previousRowDescriptorForRow:(JYFormRowDescriptor *)currentRow;
+- (JYFormRowDescriptor *)previousRowDescriptorForRow:(JYFormRowDescriptor *)currentRow;
 
 
 /**

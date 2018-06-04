@@ -18,7 +18,7 @@
  从子视图中找到第一响应者，如果不存在则返回nil
 
  */
--(UIView *)findFirstResponder;
+- (UIView *)findFirstResponder;
 
 /**
  在父视图中找到实现协议JYFormDescriptorCell的cell

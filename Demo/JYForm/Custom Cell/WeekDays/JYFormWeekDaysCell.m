@@ -115,7 +115,7 @@ NSString *const kSaturday = @"saturday";
     self.rowDescriptor.value = values;
 }
 
--(NSString *)getDayFormButton:(id)sender
+- (NSString *)getDayFormButton:(id)sender
 {
     if (sender == self.sundayButton) return kSunday;
     if (sender == self.mondayButton) return kMonday;
@@ -126,7 +126,7 @@ NSString *const kSaturday = @"saturday";
     return kSaturday;
 }
 
--(void)configureButtons
+- (void)configureButtons
 {
     for (UIView *subview in self.contentView.subviews)
     {
@@ -141,7 +141,7 @@ NSString *const kSaturday = @"saturday";
     }
 }
 
--(void)imageTopTitleBottom:(UIButton *)button
+- (void)imageTopTitleBottom:(UIButton *)button
 {
     // the space between the image and text
     CGFloat spacing = 3.0;
@@ -157,7 +157,7 @@ NSString *const kSaturday = @"saturday";
     button.imageEdgeInsets = UIEdgeInsetsMake(- (titleSize.height + spacing), 0.0, 0.0, - titleSize.width);
 }
 
--(void)updateButtons
+- (void)updateButtons
 {
     NSDictionary * value = self.rowDescriptor.value;
     self.sundayButton.selected = [[value objectForKey:kSunday] boolValue];

@@ -66,27 +66,8 @@ typedef NS_ENUM (NSUInteger, JYFormRowNavigationDirection) {
 @protocol JYFormViewDelegate <NSObject>
 
 @optional
-- (void)didSelectFormRow:(JYFormRowDescriptor *)formRow;
-- (void)deselectFormRow:(JYFormRowDescriptor *)formRow;
-- (void)reloadFormRow:(JYFormRowDescriptor *)formRow;
-- (JYFormBaseCell *)updateFormRow:(JYFormRowDescriptor *)formRow;
+- (void)formRowDescriptorValueHasChanged:(JYForm *)form formRow:(JYFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue;
 
-- (NSDictionary *)formValues;
-- (NSDictionary *)httpParameters;
-
-- (NSArray *)formValidationErrors;
-- (void)showFormValidationError:(NSError *)error;
-- (void)showFormValidationError:(NSError *)error withTitle:(NSString*)title;
-
-
-- (UIView *)inputAccessoryViewForRowDescriptor:(JYFormRowDescriptor *)rowDescriptor;
-- (JYFormRowDescriptor *)nextRow;
-
-
-- (void)beginEditing:(JYFormRowDescriptor *)rowDescriptor;
-- (void)endEditing:(JYFormRowDescriptor *)rowDescriptor;
-
--(void)ensureRowIsVisible:(JYFormRowDescriptor *)inlineRowDescriptor;
 @end
 
 
@@ -96,6 +77,8 @@ typedef NS_ENUM (NSUInteger, JYFormRowNavigationDirection) {
 @property (nonatomic, strong) UITableView *tableView;
 ///|< We declare a form through JYFormDescriptor instance and assign it to form instance.We can change the property of JYFormDescriptor to change the tableview behavior
 @property (nonatomic, strong) JYFormDescriptor *formDescriptor;
+
+@property (nonatomic, weak) id<JYFormViewDelegate> delegate;
 
 
 
@@ -144,4 +127,25 @@ typedef NS_ENUM (NSUInteger, JYFormRowNavigationDirection) {
  
  */
 - (void)beginLoading;
+
+
+- (void)didSelectFormRow:(JYFormRowDescriptor *)formRow;
+- (void)deselectFormRow:(JYFormRowDescriptor *)formRow;
+- (void)reloadFormRow:(JYFormRowDescriptor *)formRow;
+- (JYFormBaseCell *)updateFormRow:(JYFormRowDescriptor *)formRow;
+
+- (NSDictionary *)formValues;
+- (NSDictionary *)httpParameters;
+
+- (NSArray *)formValidationErrors;
+- (void)showFormValidationError:(NSError *)error;
+- (void)showFormValidationError:(NSError *)error withTitle:(NSString*)title;
+
+- (UIView *)inputAccessoryViewForRowDescriptor:(JYFormRowDescriptor *)rowDescriptor;
+- (JYFormRowDescriptor *)nextRow;
+
+- (void)beginEditing:(JYFormRowDescriptor *)rowDescriptor;
+- (void)endEditing:(JYFormRowDescriptor *)rowDescriptor;
+
+- (void)ensureRowIsVisible:(JYFormRowDescriptor *)inlineRowDescriptor;
 @end

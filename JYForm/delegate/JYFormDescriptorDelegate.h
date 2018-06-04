@@ -58,4 +58,6 @@
  @param formRow JYFormRowDescriptor实例
  */
 - (void)formRowDescriptorDisableChanged:(JYFormRowDescriptor *)formRow;
+
+- (void)formRowDescriptorValueHasChanged:(JYFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue;
 @end

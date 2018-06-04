@@ -61,6 +61,7 @@
 {
     if (_textLabel == nil) {
         _textLabel = [UILabel autolayoutView];
+        _textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         [_textLabel setContentCompressionResistancePriority:500 forAxis:UILayoutConstraintAxisHorizontal];
     }
     return _textLabel;

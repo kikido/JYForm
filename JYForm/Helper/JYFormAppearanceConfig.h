@@ -23,8 +23,8 @@
 #define kJYForm_Cell_DetailDisableTextColor UIColorHex(c8c8c8)
 
 ///|< cell主标题的字体
-//#define kJYForm_Cell_MainTextFont [UIFont systemFontOfSize:10]
+#define kJYForm_Cell_MainTextFont [UIFont preferredFontForTextStyle:UIFontTextStyleBody]
 ///|< cell副标题的字体
-//#define kJYForm_Cell_DetailTextFont [UIFont systemFontOfSize:10]
+#define kJYForm_Cell_DetailTextFont [UIFont preferredFontForTextStyle:UIFontTextStyleBody]
 
 #endif /* JYFormAppearanceConfig_h */

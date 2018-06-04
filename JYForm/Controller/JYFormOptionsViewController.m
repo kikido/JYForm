@@ -168,7 +168,7 @@
     return [option displayText];
 }
 
--(BOOL)selectedValuesContainsOption:(JYFormOptionsObject *)option
+- (BOOL)selectedValuesContainsOption:(JYFormOptionsObject *)option
 {
     NSInteger objectIndex = NSNotFound;
     for (JYFormOptionsObject *cellObject in self.selectedValues) {
@@ -179,7 +179,7 @@
     return objectIndex == NSNotFound ? NO : YES;
 }
 
--(NSMutableArray *)selectedValuesRemoveOption:(JYFormOptionsObject *)option
+- (NSMutableArray *)selectedValuesRemoveOption:(JYFormOptionsObject *)option
 {
     for (JYFormOptionsObject *selectedValueItem in self.selectedValues) {
         if ([[selectedValueItem valueData] isEqual:[option valueData]]){
@@ -191,7 +191,7 @@
     return self.selectedValues;
 }
 
--(NSMutableArray *)selectedValuesAddOption:(JYFormOptionsObject *)option
+- (NSMutableArray *)selectedValuesAddOption:(JYFormOptionsObject *)option
 {
     for (JYFormOptionsObject *selectObject in self.selectedValues) {
         if ([[selectObject valueData] isEqual:[option valueData]]) {
