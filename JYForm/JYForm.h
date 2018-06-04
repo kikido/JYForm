@@ -99,7 +99,7 @@ typedef NS_ENUM (NSUInteger, JYFormRowNavigationDirection) {
 
 
 
-- (instancetype)initFormDescriptor:(JYFormDescriptor *)form autoLayoutSuperView:(UIView *)superView;
+- (instancetype)initWithFormDescriptor:(JYFormDescriptor *)form autoLayoutSuperView:(UIView *)superView;
 
 + (instancetype)formWithFormDescriptor:(JYFormDescriptor *)form autoLayoutSuperView:(UIView *)superView;
 
@@ -107,7 +107,7 @@ typedef NS_ENUM (NSUInteger, JYFormRowNavigationDirection) {
  Initialize a form instance with JYFormDescriptor object
 
  */
-- (instancetype)initFormDescriptor:(JYFormDescriptor *)form;
+- (instancetype)initWithFormDescriptor:(JYFormDescriptor *)form;
 
 
 /**

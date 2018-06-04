@@ -60,7 +60,7 @@
     [section addFormRow:row];
     
     
-    JYForm *form = [[JYForm alloc] initFormDescriptor:formDescriptor autoLayoutSuperView:self.view];
+    JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor autoLayoutSuperView:self.view];
     [form beginLoading];
     self.form = form;
     

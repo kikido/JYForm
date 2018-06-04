@@ -39,11 +39,25 @@
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"03" rowType:JYFormRowDescriptorTypeName title:@"母亲"];
     [section addFormRow:row];
     
-    JYForm *form = [[JYForm alloc] initFormDescriptor:formDescriptor autoLayoutSuperView:self.view];
+    JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor autoLayoutSuperView:self.view];
     [form beginLoading];
     self.form = form;
     
+    self.navigationItem.rightBarButtonItems = @[];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"Edit" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(testAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button sizeToFit];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = item;
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)testAction:(UIButton *)sender
+{
+    [self.form.tableView setEditing:!self.form.tableView.editing animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

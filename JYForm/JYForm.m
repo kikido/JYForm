@@ -57,7 +57,7 @@ NSString *const JYFormRowDescriptorTypeDatePicker = @"datePicker";
 
 
 NSString *const JYFormRowDescriptorTypeSwitch = @"switch";
-NSString *const JYFormRowDescriptorTypeCheck = @"chenck";
+NSString *const JYFormRowDescriptorTypeCheck = @"check";
 NSString *const JYFormRowDescriptorTypeStepCounter = @"stepCounter";
 NSString *const JYFormRowDescriptorTypeSelectorSegmentedControl = @"selectorSegmentedControl";
 NSString *const JYFormRowDescriptorTypeSlider = @"slider";
@@ -96,7 +96,7 @@ static const CGFloat kCellestimatedRowHeight = 55.0;
 
 + (instancetype)formWithFormDescriptor:(JYFormDescriptor *)form autoLayoutSuperView:(UIView *)superView
 {
-    return [[[self class] alloc] initFormDescriptor:form autoLayoutSuperView:superView];
+    return [[[self class] alloc] initWithFormDescriptor:form autoLayoutSuperView:superView];
 }
 
 + (instancetype)formWithFormDescriptor:(JYFormDescriptor *)form frame:(CGRect)frame
@@ -104,7 +104,7 @@ static const CGFloat kCellestimatedRowHeight = 55.0;
     return [[[self class] alloc] initWithFormDescriptor:form frame:frame];
 }
 
-- (instancetype)initFormDescriptor:(JYFormDescriptor *)form autoLayoutSuperView:(UIView *)superView
+- (instancetype)initWithFormDescriptor:(JYFormDescriptor *)form autoLayoutSuperView:(UIView *)superView
 {
     if (self = [super init]) {
         if (!superView || ![superView isKindOfClass:[UIView class]]) {
@@ -121,7 +121,7 @@ static const CGFloat kCellestimatedRowHeight = 55.0;
     return self;
 }
 
-- (instancetype)initFormDescriptor:(JYFormDescriptor *)form
+- (instancetype)initWithFormDescriptor:(JYFormDescriptor *)form
 {
     return [self initWithFormDescriptor:form frame:CGRectZero];
 }
@@ -541,7 +541,7 @@ static const CGFloat kCellestimatedRowHeight = 55.0;
 - (void)configureCell:(JYFormBaseCell *)cell
 {
     [cell update];
-    [cell.rowDescriptor.cellUpdate enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    [cell.rowDescriptor.cellConfigAfterUpdate enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [cell setValue:obj == [NSNull null] ? nil : obj forKeyPath:key];
     }];
     if (cell.rowDescriptor.disabled) {

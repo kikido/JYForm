@@ -26,7 +26,7 @@
     [super viewDidLoad];
 
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 210, 40)];
-    
+
     for (NSInteger i = 0; i < 3; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(70*i, 0, 70, 40);
@@ -127,7 +127,7 @@
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"30" rowType:JYFormRowDescriptorTypeTextView title:@"备注"];
     [section addFormRow:row];
     
-    JYForm *form = [[JYForm alloc] initFormDescriptor:formDescriptor];
+    JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor];
     form.translatesAutoresizingMaskIntoConstraints = NO;
     [self.containerView addSubview:form];
     [self.containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[form]-0-|" options:0 metrics:nil views:@{@"form" : form}]];
@@ -175,7 +175,7 @@
     row.noValueDisplayText = @"请输入日期";
     [section addFormRow:row];
     
-    JYForm *form = [[JYForm alloc] initFormDescriptor:formDescriptor];
+    JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor];
     form.translatesAutoresizingMaskIntoConstraints = NO;
     [self.containerView addSubview:form];
     [self.containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[form]-0-|" options:0 metrics:nil views:@{@"form" : form}]];
@@ -214,7 +214,7 @@
     [section addFormRow:row];
     
     
-    JYForm *form = [[JYForm alloc] initFormDescriptor:formDescriptor];
+    JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor];
     form.translatesAutoresizingMaskIntoConstraints = NO;
     [self.containerView addSubview:form];
     [self.containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[form]-0-|" options:0 metrics:nil views:@{@"form" : form}]];

@@ -30,10 +30,11 @@
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"00" rowType:JYFormRowDescriptorTypeSwitch title:@"显示下一行"];
     row.onChangeBlock = ^(id oldValue, id newValue, JYFormRowDescriptor *rowDescriptor) {
+        JYFormRowDescriptor *nextRow = [formDescriptor formRowWithTag:@"01"];
         if ([newValue boolValue]) {
-            self.nextRow.hidden = NO;
+            nextRow.hidden = NO;
         } else {
-            self.nextRow.hidden = YES;
+            nextRow.hidden = YES;
         }
     };
     [section addFormRow:row];
@@ -48,7 +49,6 @@
     };
     [section addFormRow:row];
     row.hidden = YES;
-    self.nextRow = row;
     
     //第二段
     section = [JYFormSectionDescriptor formSectionWithTitle:@"依赖的section"];
@@ -61,7 +61,7 @@
     [row.cellConfigAtConfigure setObject:@(NSTextAlignmentLeft) forKey:@"textField.textAlignment"];
     [section addFormRow:row];
     
-    JYForm *form = [[JYForm alloc] initFormDescriptor:formDescriptor autoLayoutSuperView:self.view];
+    JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor autoLayoutSuperView:self.view];
     [form beginLoading];
     self.form = form;
     // Do any additional setup after loading the view.

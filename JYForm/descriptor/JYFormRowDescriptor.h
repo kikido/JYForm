@@ -66,7 +66,7 @@ typedef NS_ENUM(NSUInteger, JYFormPresentationMode) {
 - (nonnull NSString *)editTextValue;
 
 ///|< 配置cell，当JYForm调用update方法后使用
-@property (nonnull, nonatomic, strong, readonly) NSMutableDictionary *cellUpdate;
+@property (nonnull, nonatomic, strong, readonly) NSMutableDictionary *cellConfigAfterUpdate;
 ///|< 配置cell，在JYFormOptionsViewController中的cellForRowAtIndexPath方法中被使用
 @property (nonnull, nonatomic, strong, readonly) NSMutableDictionary *cellConfigForSelector;
 ///|< 配置cell，当JYForm调用update方法后，且disable属性为Yes时被使用

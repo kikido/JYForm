@@ -84,6 +84,7 @@
 
     if ([self.rowDescriptor.rowType isEqualToString:JYFormRowDescriptorTypeText]) {
         self.textField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+        self.textField.autocorrectionType = UITextAutocorrectionTypeDefault;
     }
     else if ([self.rowDescriptor.rowType isEqualToString:JYFormRowDescriptorTypeName]) {
         self.textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
@@ -94,7 +95,7 @@
     else if ([self.rowDescriptor.rowType isEqualToString:JYFormRowDescriptorTypeNumber]) {
         self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     }
-    else if ([self.rowDescriptor.rowType isEqualToString:JYFormRowDescriptorTypeInteger]) {
+    else if ([self.rowDescriptor.rowType isEqualToString:JYFormRowDescriptorTypeInteger] || [self.rowDescriptor.rowType isEqualToString:JYFormRowDescriptorTypePhone]) {
         self.textField.keyboardType = UIKeyboardTypeNumberPad;
     }
     else if ([self.rowDescriptor.rowType isEqualToString:JYFormRowDescriptorTypeDecimal]) {
@@ -110,6 +111,7 @@
     else if ([self.rowDescriptor.rowType isEqualToString:JYFormRowDescriptorTypeURL]) {
         self.textField.keyboardType = UIKeyboardTypeURL;
     }
+    
     
     self.textLabel.text = (self.rowDescriptor.required && self.rowDescriptor.title && self.rowDescriptor.sectionDescriptor.formDescriptor.addAsteriskToRequiredRowsTitle) ? [NSString stringWithFormat:@"%@*",self.rowDescriptor.title] : self.rowDescriptor.title;
     self.textField.text = self.rowDescriptor.value ? [self.rowDescriptor displayTextValue] : self.rowDescriptor.noValueDisplayText;

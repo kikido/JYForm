@@ -40,6 +40,7 @@
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"10" rowType:JYFormRowDescriptorTypeText title:@"身份证地址"];
+    row.hidden = YES;
     [section addFormRow:row];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"11" rowType:JYFormRowDescriptorTypeDate title:@"身份证有效期"];
@@ -66,9 +67,10 @@
     [section addFormRow:row];
     
     
-    JYForm *form = [[JYForm alloc] initFormDescriptor:formDescriptor autoLayoutSuperView:self.view];
+    JYForm *form = [[JYForm alloc] initWithFormDescriptor:formDescriptor autoLayoutSuperView:self.view];
     [form beginLoading];
     self.form = form;
+    
     
     self.navigationItem.rightBarButtonItems = @[];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(submitAction:)];
