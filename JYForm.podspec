@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JYForm"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "JYForm是一个强大的，能够灵活、动态创建和修改表单的iOS库"
   s.homepage     = "https://github.com/kikido/JYForm.git"
   s.license      = "MIT"
