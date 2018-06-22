@@ -1,11 +1,29 @@
 ### JYForm
 
-JYForm是一个iOS开源库，能够快速、灵活的搭建和修改表单。
+JYForm是一个强大的，能够灵活、动态创建和修改表单的iOS库
+
+### 要求
+
+- ARC
+- iOS 8.0+
+- OC
 		
 ### 目录
 
-* auto-gen TOC:
-{:toc}
++ [如何创建表格](#如何创建表格)
+	+ [使用AutoLayout添加](#使用AutoLayout添加)
+	+ [使用CGRect添加](#使用CGRect添加)
++ [行的种类](#行的种类)
++ [Section](#行的种类)
++ [获取表单值](#获取表单值)
+	+ [formValues](#formValues)
+	+ [httpParameters](#httpParameters)
++ [如何自定义行呢](#如何自定义行呢)
++ [如何在运行中改变表格](#如何在运行中改变表格)
++ [验证](#验证)
++ [更多例子请看Demo！](#更多例子请看Demo！)
++ [FAQ](#FAQ)
+
 	
 ### 如何创建表格
 
@@ -713,10 +731,7 @@ cell的高度优先级按照以下规则
 - 实现`JYFormDescriptorCell`代理的方法`+ (CGFloat)formDescriptorCellHeightForRowDescriptor:(JYFormRowDescriptor *)rowDescriptor;`
 - 前两部都没有的吗，则返回默认高度`static const CGFloat kCellestimatedRowHeight = 55。0;`
 
-### 要求
 
-- ARC
-- iOS 8.0+
 
 
 
