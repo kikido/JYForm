@@ -18,11 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"表单1";
+    
     JYFormDescriptor *formDescriptor = [JYFormDescriptor formDescriptor];
     JYFormSectionDescriptor *section = nil;
     JYFormRowDescriptor *row = nil;
     
     section = [JYFormSectionDescriptor formSectionWithTitle:nil];
+    section.footerHieght = 0.;
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"00" rowType:JYFormRowDescriptorTypeFloatLabeledTextField title:@"姓名"];
@@ -37,6 +40,7 @@
     row.required = YES;
     
     section = [JYFormSectionDescriptor formSectionWithTitle:nil];
+    section.footerHieght = 0.;
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"10" rowType:JYFormRowDescriptorTypeText title:@"身份证地址"];
@@ -47,6 +51,7 @@
     [section addFormRow:row];
     
     section = [JYFormSectionDescriptor formSectionWithTitle:nil];
+    section.footerHieght = 0.;
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"20" rowType:JYFormRowDescriptorTypeSelectorPush title:@"征信人类别"];

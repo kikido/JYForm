@@ -167,8 +167,8 @@ static const CGFloat kCellestimatedRowHeight = 55.0;
     if (!self.tableView) {
         self.tableView = [[UITableView alloc] initWithFrame:self.bounds style:self.tableViewStyle];
         self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        if ([self.tableView respondsToSelector:@selector(cellLayoutMarginsFollowReadableWidth)]) {
-            //ios9.0以后出现的特性
+        
+        if (@available(iOS 9.0, *)) {
             self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
         }
     }

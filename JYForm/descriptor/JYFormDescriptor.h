@@ -24,8 +24,8 @@
 #import "JYFormSectionDescriptor.h"
 
 
-extern NSString *const JYFormErrorDomain;
-extern NSString *const JYValidationStatusErrorKey;
+extern NSString *__nonnull const JYFormErrorDomain;
+extern NSString *__nonnull const JYValidationStatusErrorKey;
 
 typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 {
@@ -36,9 +36,9 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 @interface JYFormDescriptor : NSObject
 
 ///|< A array contains the section which show on the form, if the section's edited to No, the section will removed form formSections
-@property (nonatomic, strong, readonly) NSMutableArray *formSections;
+@property (nonnull, nonatomic, strong, readonly) NSMutableArray *formSections;
 ///|< The title of thr form
-@property (nonatomic, copy, readonly) NSString *title;
+@property (nullable, nonatomic, copy, readonly) NSString *title;
 ///|< Whether the tableview should end edit while scroll begin, default is yes
 @property (nonatomic, assign) BOOL endEditingTableViewOnScroll;
 ///|< Whether add Asterisk to the required rows, default is no
@@ -46,23 +46,22 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 ///|< Whether the form is disabled
 @property (nonatomic, assign, getter=isDisabled) BOOL disabled;
 ///|< The delegate must conform to the JYFormDescriptorDelegate protocol
-@property (nonatomic, weak) id<JYFormDescriptorDelegate> delegate;
+@property (nullable, nonatomic, weak) id<JYFormDescriptorDelegate> delegate;
 
-@property (nonatomic, strong) UIFont *formFont;
 
 /**
  Initialize a JYFormDescriptor instance
 
  @return The JYFormDescriptor instance initialized by default
  */
-+ (instancetype)formDescriptor;
++ (nonnull instancetype)formDescriptor;
 
 
 /**
  Initialize a JYFormDescriptor instance with the form's title
 
  */
-+ (instancetype)formDescriptorWithTitle:(NSString *)title;
++ (nonnull instancetype)formDescriptorWithTitle:(nullable NSString *)title;
 
 
 /**
@@ -70,7 +69,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 
  @param formSection The JYFormSectionDescriptor instance add to the form
  */
-- (void)addFormSection:(JYFormSectionDescriptor *)formSection;
+- (void)addFormSection:(nonnull JYFormSectionDescriptor *)formSection;
 
 
 /**
@@ -79,7 +78,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param formSection The formSection to add to the form. This value must not be nil
  @param index The index in the form at which to insert anObject. This value must not be greater than the count of elements in the formrSecions.
  */
-- (void)addFormSection:(JYFormSectionDescriptor *)formSection atIndex:(NSUInteger)index;
+- (void)addFormSection:(nonnull JYFormSectionDescriptor *)formSection atIndex:(NSUInteger)index;
 
 
 /**
@@ -88,7 +87,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param formSection The formSection add after another formSection
  @param afterSection The formSection that in front of added formSection
  */
-- (void)addFormSection:(JYFormSectionDescriptor *)formSection afterSection:(JYFormSectionDescriptor *)afterSection;
+- (void)addFormSection:(nonnull JYFormSectionDescriptor *)formSection afterSection:(nonnull JYFormSectionDescriptor *)afterSection;
 
 
 /**
@@ -97,7 +96,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param formRow The formrow add before another formrow
  @param beforeRow The formrow that after the added formrow
  */
-- (void)addFormRow:(JYFormRowDescriptor *)formRow beforeRow:(JYFormRowDescriptor *)beforeRow;
+- (void)addFormRow:(nonnull JYFormRowDescriptor *)formRow beforeRow:(nonnull JYFormRowDescriptor *)beforeRow;
 
 
 /**
@@ -106,7 +105,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param formRow The formrow add before another formrow
  @param beforeRowTag The formrow's tag which after the added formrow
  */
-- (void)addFormRow:(JYFormRowDescriptor *)formRow beforeRowTag:(NSString *)beforeRowTag;
+- (void)addFormRow:(nonnull JYFormRowDescriptor *)formRow beforeRowTag:(nonnull NSString *)beforeRowTag;
 
 
 /**
@@ -115,7 +114,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param formRow The formrow add after another formrow
  @param afterRow The formrow that in front of added formrow
  */
-- (void)addFormRow:(JYFormRowDescriptor *)formRow afterRow:(JYFormRowDescriptor *)afterRow;
+- (void)addFormRow:(nonnull JYFormRowDescriptor *)formRow afterRow:(nonnull JYFormRowDescriptor *)afterRow;
 
 
 /**
@@ -124,7 +123,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param formRow The formrow add after another formrow
  @param afterRowTag The formrow's tag which in front of the added formrow
  */
-- (void)addFormRow:(JYFormRowDescriptor *)formRow afterRowTag:(NSString *)afterRowTag;
+- (void)addFormRow:(nonnull JYFormRowDescriptor *)formRow afterRowTag:(nonnull NSString *)afterRowTag;
 
 
 /**
@@ -140,7 +139,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 
  @param formSection The formSection to remove form the form
  */
-- (void)removeFormSection:(JYFormSectionDescriptor *)formSection;
+- (void)removeFormSection:(nonnull JYFormSectionDescriptor *)formSection;
 
 
 /**
@@ -148,7 +147,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 
  @param formRow The formrow to remove form the form
  */
-- (void)removeFormRow:(JYFormRowDescriptor *)formRow;
+- (void)removeFormRow:(nonnull JYFormRowDescriptor *)formRow;
 
 
 /**
@@ -156,7 +155,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 
  @param rowTag The removed formrow's tag
  */
-- (void)removeFormRowWithTag:(NSString *)rowTag;
+- (void)removeFormRowWithTag:(nonnull NSString *)rowTag;
 
 
 /**
@@ -165,7 +164,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param tag The formrow's tag
  @return  Returns the formrow whose tag is specificied
  */
-- (JYFormRowDescriptor *)formRowWithTag:(NSString *)tag;
+- (nonnull JYFormRowDescriptor *)formRowWithTag:(nonnull NSString *)tag;
 
 
 /**
@@ -174,7 +173,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param indexPath An formrow's location in the form
  @return The formrow located at index
  */
-- (JYFormRowDescriptor *)formRowAtIndex:(NSIndexPath *)indexPath;
+- (nonnull JYFormRowDescriptor *)formRowAtIndex:(nonnull NSIndexPath *)indexPath;
 
 
 /**
@@ -183,7 +182,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param index An formSection's location in the form
  @return The formSection located at index
  */
-- (JYFormSectionDescriptor *)formSectionAtIndex:(NSUInteger)index;
+- (nonnull JYFormSectionDescriptor *)formSectionAtIndex:(NSUInteger)index;
 
 
 /**
@@ -192,7 +191,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  @param formRow A formrow object of the form
  @return An index path representing the row and section of the formrow, or nil if the index path is invalid.
  */
-- (NSIndexPath *)indexPathOfFormRow:(JYFormRowDescriptor *)formRow;
+- (nonnull NSIndexPath *)indexPathOfFormRow:(nonnull JYFormRowDescriptor *)formRow;
 
 
 /**
@@ -200,7 +199,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 
  @return JYForm adds a value for each JYFormRowDescriptor that belongs to a JYFormSectionDescriptor. The dictionary key is the value of JYFormRowDescriptor tag property.
  */
-- (NSDictionary *)formValues;
+- (nonnull NSDictionary *)formValues;
 
 
 /**
@@ -211,7 +210,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
            2. If the object conforms to protocol JYFormOptionObject, JYForm gets the value from formValue method.
            3. Otherwise it return nil.
  */
-- (NSDictionary *)httpParameters:(JYForm *)form;
+- (nonnull NSDictionary *)httpParameters:(nonnull JYForm *)form;
 
 
 
@@ -220,7 +219,7 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
 
  @return  Return the array of error when each row's value is failured to validate the validator
  */
-- (NSArray *)localValidationErrors;
+- (nonnull NSArray *)localValidationErrors;
 
 
 
@@ -228,21 +227,21 @@ typedef NS_ENUM(NSUInteger, JYFormErrorCode)
  Asks the form to make it's first row which can be first responder to be the first responder in its window.
 
  */
-- (void)setFirstResponder:(JYForm *)form;
+- (void)setFirstResponder:(nonnull JYForm *)form;
 
 
 /**
  The nextRow after the currentrow on the form, maybe nil
 
  */
-- (JYFormRowDescriptor *)nextRowDescriptorForRow:(JYFormRowDescriptor *)currentRow;
+- (nonnull JYFormRowDescriptor *)nextRowDescriptorForRow:(nonnull JYFormRowDescriptor *)currentRow;
 
 
 /**
  The previousRow before the currentrow on the form, maybe nil
 
  */
-- (JYFormRowDescriptor *)previousRowDescriptorForRow:(JYFormRowDescriptor *)currentRow;
+- (nonnull JYFormRowDescriptor *)previousRowDescriptorForRow:(nonnull JYFormRowDescriptor *)currentRow;
 
 
 /**

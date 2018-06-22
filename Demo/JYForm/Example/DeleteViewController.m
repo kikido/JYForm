@@ -25,6 +25,7 @@
     
     //第一段
     section = [JYFormSectionDescriptor formSectionWithTitle:@"Delete" sectionOptions:JYFormSectionOptionCanDelete];
+    section.footerTitle = @"当form处于unEdited的状态时，可以通过左滑删除";
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"00" rowType:JYFormRowDescriptorTypeName title:@"姓"];

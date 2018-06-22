@@ -27,6 +27,7 @@
     //第一段
     section = [JYFormSectionDescriptor formSectionWithTitle:@"独立行"];
     section.footerTitle = @"当Switch行为On的时候，Number行会被隐藏掉\n当Number行的值大于50时，Date行将被禁用\n如果Name行的value包括cc字符，并且Date行被禁用的话，Email行会被隐藏";
+    section.footerHieght = 80.;
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"00" rowType:JYFormRowDescriptorTypeName title:@"Name"];

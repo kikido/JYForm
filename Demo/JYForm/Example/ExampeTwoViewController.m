@@ -72,6 +72,7 @@
     JYFormRowDescriptor *row = nil;
     
     section = [JYFormSectionDescriptor formSectionWithTitle:nil];
+    section.footerHieght = 0.;
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"00" rowType:JYFormRowDescriptorTypeName];
@@ -85,6 +86,7 @@
     [section addFormRow:row];
     
     section = [JYFormSectionDescriptor formSectionWithTitle:nil];
+    section.footerHieght = 0.;
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"10" rowType:JYFormRowDescriptorTypeSwitch title:@"全天"];
@@ -114,6 +116,7 @@
     
     
     section = [JYFormSectionDescriptor formSectionWithTitle:nil];
+    section.footerHieght = 0.;
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"20" rowType:JYFormRowDescriptorTypeSelectorPush title:@"重复"];

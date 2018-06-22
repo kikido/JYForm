@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"验证";
+    
     JYFormDescriptor *formDescriptor = [JYFormDescriptor formDescriptor];
     JYFormSectionDescriptor *section = nil;
     JYFormRowDescriptor *row = nil;
@@ -38,11 +40,11 @@
     
     //第三段
     section = [JYFormSectionDescriptor formSectionWithTitle:@"验证密码"];
-    section.footerTitle = @"密码长度需在6~20位之间";
+    section.footerTitle = @"密码长度需在6~20位之间，且包含至少一个数字及字母";
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"20" rowType:JYFormRowDescriptorTypePassword title:@"密码"];
-    [row addValidator:[JYFormRegexValidator formRegexValidatorWithMsg:@"密码长度应在6~32位之间" regexString:@"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$"]];
+    [row addValidator:[JYFormRegexValidator formRegexValidatorWithMsg:@"密码长度应在6~32位之间" regexString:@"(?=.*\\d)(?=.*[A-Za-z])^.{6,32}$"]];
     row.required = YES;
     [section addFormRow:row];
     

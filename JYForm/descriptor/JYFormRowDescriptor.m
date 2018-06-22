@@ -81,6 +81,7 @@ CGFloat const JYFormUnspecifiedCellHeight = -3.0;
         _cellConfigAfterUpdate = @{}.mutableCopy;
         _cellConfigIfDisabled = @{}.mutableCopy;
         _cellConfigAtConfigure = @{}.mutableCopy;
+        _cellDataDictionary = @{}.mutableCopy;
         _height = JYFormRowInitialHeight;
         
         [self addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];

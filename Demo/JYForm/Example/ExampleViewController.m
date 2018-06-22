@@ -92,9 +92,6 @@
     section = [JYFormSectionDescriptor formSectionWithTitle:@"验证"];
     [formDescriptor addFormSection:section];
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
-    headerView.backgroundColor = [UIColor redColor];
-    section.headerView = headerView;
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"30" rowType:JYFormRowDescriptorTypeButton title:@"验证"];
     row.action.viewControllerClass = [ValidationViewController class];

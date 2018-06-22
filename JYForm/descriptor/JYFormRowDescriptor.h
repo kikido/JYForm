@@ -73,6 +73,8 @@ typedef NS_ENUM(NSUInteger, JYFormPresentationMode) {
 @property (nonnull, nonatomic, strong, readonly) NSMutableDictionary *cellConfigIfDisabled;
 ///|< 配置cell，当cell调用config之后，update方法之前调用
 @property (nonnull, nonatomic, strong, readonly) NSMutableDictionary *cellConfigAtConfigure;
+///|< 预留
+@property (nonnull, nonatomic, strong, readonly) NSMutableDictionary *cellDataDictionary;
 
 ///|< Whether the row is hidden, default is NO
 @property (nonatomic, assign) BOOL hidden;

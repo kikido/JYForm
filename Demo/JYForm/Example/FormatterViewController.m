@@ -27,7 +27,8 @@
     
     //第一段
     section = [JYFormSectionDescriptor formSectionWithTitle:@"Text Formatter"];
-    section.footerTitle = @"Rows can be configured to use the formatter as you type or to toggle on and off during for display/editing.  You will most likely need custom NSFormatter objects to do on the fly formatting since NSNumberFormatter is pretty limited in this regard";
+    section.footerHieght = 70.;
+    section.footerTitle =  @"当row处于编辑或者展示状态时，文本都可以使用formatter配置。你可以使用自定义的NSFormatter的子类，因为原生的NSNumberFormatter局限比较大";
     [formDescriptor addFormSection:section];
     
     row = [JYFormRowDescriptor formRowDescriptorWithTag:@"00" rowType:JYFormRowDescriptorTypeDecimal title:@"人民币"];
