@@ -21,7 +21,7 @@ JYForm是一个强大的，能够灵活、动态创建和修改表单的iOS库
 + [如何自定义行呢](#如何自定义行呢)
 + [如何在运行中改变表格](#如何在运行中改变表格)
 + [验证](#验证)
-+ [更多例子请看Demo！](#更多例子请看Demo！)
++ [更多例子请看Demo](#更多例子请看Demo)
 + [FAQ](#FAQ)
 
 	
@@ -627,7 +627,7 @@ row = [JYFormRowDescriptor formRowDescriptorWithTag:@"name" rowType:JYFormRowDes
 [section addFormRow:row];
 ```
 
-### 更多例子请看Demo！
+### 更多例子请看Demo
 
 ### FAQ
 

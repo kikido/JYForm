@@ -142,7 +142,6 @@ typedef NS_ENUM (NSUInteger, JYFormRowNavigationDirection) {
 - (void)showFormValidationError:(NSError *)error withTitle:(NSString*)title;
 
 - (UIView *)inputAccessoryViewForRowDescriptor:(JYFormRowDescriptor *)rowDescriptor;
-- (JYFormRowDescriptor *)nextRow;
 
 - (void)beginEditing:(JYFormRowDescriptor *)rowDescriptor;
 - (void)endEditing:(JYFormRowDescriptor *)rowDescriptor;
